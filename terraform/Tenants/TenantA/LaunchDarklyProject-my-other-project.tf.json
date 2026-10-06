@@ -1,0 +1,57 @@
+{
+  "resource": {
+    "launchdarkly_project": {
+      "my-other-project": {
+        "key": "my-other-project",
+        "name": "My Other Project",
+        "tags": null,
+        "environments": {
+          "dev": {
+            "key": "dev",
+            "name": "Development",
+            "color": "0000FF"
+          },
+          "prod": {
+            "key": "prod",
+            "name": "Production",
+            "color": "FF0000",
+            "approval_settings": {
+              "auto_apply_approved_changes": false,
+              "min_num_approvals": 1,
+              "service_kind": "launchdarkly"
+            }
+          }
+        },
+        "lifecycle": {
+          "ignore_changes": [
+            "environments"
+          ]
+        }
+      }
+    },
+    "launchdarkly_environment": {
+      "my-other-project-dev": {
+        "key": "dev",
+        "name": "Development",
+        "color": "0000FF",
+        "project_key": "${launchdarkly_project.my-other-project.key}"
+      },
+      "my-other-project-prod": {
+        "key": "prod",
+        "name": "Production",
+        "color": "FF0000",
+        "approval_settings": {
+          "auto_apply_approved_changes": false,
+          "min_num_approvals": 1,
+          "service_kind": "launchdarkly"
+        },
+        "segment_approval_settings": {
+          "auto_apply_approved_changes": false,
+          "min_num_approvals": 1,
+          "service_kind": "launchdarkly"
+        },
+        "project_key": "${launchdarkly_project.my-other-project.key}"
+      }
+    }
+  }
+}

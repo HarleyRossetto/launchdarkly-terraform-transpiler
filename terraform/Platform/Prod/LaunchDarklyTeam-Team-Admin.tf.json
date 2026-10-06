@@ -1,0 +1,14 @@
+{
+  "resource": {
+    "launchdarkly_team": {
+      "Team-Admin": {
+        "key": "Team-Admin",
+        "name": "Admin Team",
+        "custom_role_keys": [
+          "Role-Admin"
+        ],
+        "description": "Team with administrative privileges"
+      }
+    }
+  }
+}

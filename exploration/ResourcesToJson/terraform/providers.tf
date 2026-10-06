@@ -1,0 +1,14 @@
+terraform {
+  required_providers {
+    launchdarkly = {
+        source  = "launchdarkly/launchdarkly"
+        version = "~> 3.0"
+    }
+  }
+}
+
+provider "launchdarkly" {
+  max_concurrency = 1
+
+  archive_flags_on_destroy = false
+}

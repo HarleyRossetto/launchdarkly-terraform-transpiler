@@ -1,0 +1,70 @@
+{
+  "resource": {
+    "launchdarkly_project": {
+      "my-project": {
+        "key": "my-project",
+        "name": "My Project",
+        "tags": null,
+        "environments": {
+          "dev": {
+            "key": "dev",
+            "name": "Development",
+            "color": "0000FF"
+          },
+          "prod": {
+            "key": "prod",
+            "name": "Production",
+            "color": "FF0000",
+            "approval_settings": {
+              "auto_apply_approved_changes": false,
+              "min_num_approvals": 2,
+              "required_approval_tags": [
+                "compliance",
+                "security"
+              ],
+              "service_kind": "launchdarkly"
+            }
+          }
+        },
+        "lifecycle": {
+          "ignore_changes": [
+            "environments"
+          ]
+        }
+      }
+    },
+    "launchdarkly_environment": {
+      "my-project-dev": {
+        "key": "dev",
+        "name": "Development",
+        "color": "0000FF",
+        "project_key": "${launchdarkly_project.my-project.key}"
+      },
+      "my-project-prod": {
+        "key": "prod",
+        "name": "Production",
+        "color": "FF0000",
+        "approval_settings": {
+          "auto_apply_approved_changes": false,
+          "min_num_approvals": 2,
+          "required_approval_tags": [
+            "compliance",
+            "security"
+          ],
+          "service_kind": "launchdarkly"
+        },
+        "segment_approval_settings": {
+          "auto_apply_approved_changes": false,
+          "min_num_approvals": 2,
+          "required_approval_tags": [
+            "compliance",
+            "security",
+            "hxr"
+          ],
+          "service_kind": "launchdarkly"
+        },
+        "project_key": "${launchdarkly_project.my-project.key}"
+      }
+    }
+  }
+}

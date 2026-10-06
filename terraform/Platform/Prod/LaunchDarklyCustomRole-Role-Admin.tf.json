@@ -1,0 +1,32 @@
+{
+  "resource": {
+    "launchdarkly_custom_role": {
+      "Role-Admin": {
+        "key": "Role-Admin",
+        "name": "Admin Role",
+        "description": "Role with administrative privileges",
+        "base_permissions": "no_access",
+        "policy_statements": [
+          {
+            "effect": "allow",
+            "actions": [
+              "*"
+            ],
+            "resources": [
+              "proj/*"
+            ]
+          },
+          {
+            "effect": "allow",
+            "actions": [
+              "*"
+            ],
+            "resources": [
+              "team/*"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

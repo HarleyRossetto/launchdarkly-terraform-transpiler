@@ -1,0 +1,20 @@
+{
+  "resource": {
+    "launchdarkly_relay_proxy_configuration": {
+      "prod-relay": {
+        "name": "prod-relay",
+        "policy": [
+          {
+            "effect": "allow",
+            "actions": [
+              "*"
+            ],
+            "resources": [
+              "proj/*:env/*"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

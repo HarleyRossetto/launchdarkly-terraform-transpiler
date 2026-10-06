@@ -6,6 +6,16 @@
 # dotenv files
 .env
 
+# Terraform saved plans (binary artifacts)
+terraform.plan
+terraform.bootstrap.plan
+terraform.bootstrap.json
+
+.terraform
+.terraform.lock.hcl
+*.tfstate
+terraform.tfstate.backup
+
 # User-specific files
 *.rsuser
 *.suo
